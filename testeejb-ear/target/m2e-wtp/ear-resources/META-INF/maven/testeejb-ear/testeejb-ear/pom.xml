@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>testeejb-ear</groupId>
+	<artifactId>testeejb-ear</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>ear</packaging>
+
+	<description>
+		A set of argmaps ejb ear applications
+	</description>
+
+	<dependencies>
+		<!-- ejb and web modules -->
+		<dependency>
+			<groupId>teste.ejb</groupId>
+			<artifactId>testeejb</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>testeejb-interfaces</groupId>
+			<artifactId>testeejb-interfaces</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>ejb</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<!-- configuring the ear plugin -->
+				
+				<configuration>
+					<modules>
+						<ejbModule>
+							<groupId>teste.ejb</groupId>
+							<artifactId>testeejb</artifactId>
+							<bundleFileName>A_CarEJB.jar</bundleFileName>
+						</ejbModule>
+						
+						<ejbModule>
+							<groupId>testeejb-interfaces</groupId>
+							<artifactId>testeejb-interfaces</artifactId>
+							<bundleFileName>B_BicicletaEJB.jar</bundleFileName>
+						</ejbModule>
+
+<!--						<jarModule>-->
+<!--							<groupId>testeejb-interfaces</groupId>-->
+<!--							<artifactId>testeejb-interfaces</artifactId>-->
+<!--						</jarModule>-->
+
+					</modules>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+					<ejbVersion>3.1</ejbVersion>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
