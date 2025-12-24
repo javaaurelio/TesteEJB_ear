@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd" version="7">
+  <description>A set of argmaps ejb ear applications</description>
+  <display-name>testeejb-ear</display-name>
+  <module>
+    <ejb>A_CarEJB.jar</ejb>
+  </module>
+  <module>
+    <ejb>B_BicicletaEJB.jar</ejb>
+  </module>
+</application>
