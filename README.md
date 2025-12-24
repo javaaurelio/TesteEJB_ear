@@ -1,1 +1,1 @@
-Teste EJB
+Teste EJBss
